@@ -2,14 +2,12 @@ package day15;
 
 public class Resource {
 
-	int data;
-	boolean type;
+	int value;
+	boolean flag;
 
-	
-
-	synchronized void setData(int data) {
-
-		while (type) {
+	synchronized void setValue(int value)   {
+		this.value = value;
+		while(flag) {
 			try {
 				wait();
 			} catch (InterruptedException e) {
@@ -17,23 +15,25 @@ public class Resource {
 				e.printStackTrace();
 			}
 		}
-		this.data = data;
-		type = true;
+		flag = true;
 		notifyAll();
-		System.out.println("data set :" + data);
+		System.out.println("value is seted :"+value);
 	}
-	synchronized int getData() {
 
-		while (!type) {
-			try {wait();} catch (InterruptedException e) {e.printStackTrace();}
+	synchronized int getValue()  {
+		while(!flag) {
+			try {
+				wait();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
-		System.out.println("data :" + data);
-		type = false;
+		System.out.println("value is : "+value);
+		flag = false;
 		notifyAll();
-		return data;
-
+		return value;
+		
 	}
-
-	
 
 }
