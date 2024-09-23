@@ -1,4 +1,4 @@
-package day6;
+package shakthi;
 
 import java.util.Scanner;
 

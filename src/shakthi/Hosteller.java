@@ -1,4 +1,4 @@
-package day6;
+package shakthi;
 
 public class  Hosteller extends Student{
 

@@ -1,4 +1,4 @@
-package Day3;
+package day3;
 
 public class area {
 	public static void main(String[] args) {

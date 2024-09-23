@@ -1,4 +1,4 @@
-package day6;
+package shakthi;
 
 public class DayScholar extends Student{
 	private int busNumber;

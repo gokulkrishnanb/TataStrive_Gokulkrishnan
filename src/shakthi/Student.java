@@ -1,4 +1,4 @@
-package day6;
+package shakthi;
 
 public abstract class Student {
 	protected  int studentId;
